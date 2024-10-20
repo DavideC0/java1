@@ -32,7 +32,6 @@ public class Cibo {
 	public void setCalorie(double calorie) {
 		this.calorie = calorie;
 	}
-
 	@Override
 	public String toString() {
 		return "Cibo [nome=" + nome + ", peso=" + peso + ", calorie=" + calorie + "]";

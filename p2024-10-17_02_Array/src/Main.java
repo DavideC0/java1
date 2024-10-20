@@ -10,12 +10,11 @@ public class Main {
 			calorie_tot += portate[i].getCalorie();
 		}
 		System.out.println("Calorie totali: " + calorie_tot);
-		Cibo[] pranzetto = new Cibo[3];
 		for (int i=0; i<50; i++) {
+			System.out.println("La persona numero " + (i+1) + " ha questo menù:");
 			for (int j=0; j<3; j++) {
-				pranzetto[j] = portate[(int)Math.random()*5];
+				System.out.println((j+1) + ") " + portate[(int)(Math.random()*5)]);
 			}
-			System.out.println("La persona numero " + (i+1) + " ha questo menù " + pranzetto);
 		}
 	}
 
