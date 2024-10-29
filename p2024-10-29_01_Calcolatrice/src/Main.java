@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 public class Main {
 
 	public static void main(String[] args) {
@@ -31,33 +31,43 @@ public class Main {
 			System.out.println("errore");
 		}
 		
-		esempio = "4+5*2-1";
+
+		esempio = "4+5*2+1";
 		esempio = esempio.replaceAll(" ", "");
 		String[] operandi1 = esempio.split("[\\+\\-\\*\\/]");
 		String[] operatore1 = esempio.split("[0-9]+");
-		for (String s:operandi1) {
-			System.out.println(s);
+		ArrayList<String> operazioni = new ArrayList<String>();
+		for (int i=0; i < operandi1.length; i++) {
+			operazioni.add(operandi1[i]);
+			if (i < operandi1.length - 1) {
+				operazioni.add(operatore1[i+1]);
+			}
 		}
-		for (String s:operatore1) {
-			System.out.println(s);
-		}
-		while (operandi1 != null) {
-			if (operatore[1].equals("+")) {
-				int result = Integer.parseInt(operandi[0]) + Integer.parseInt(operandi[1]);
-				System.out.println(result);
-			} else if (operatore[1].equals("-")) {
-				int result = Integer.parseInt(operandi[0]) - Integer.parseInt(operandi[1]);
-				System.out.println(result);
-			} else if (operatore[1].equals("*")) {
-				int result = Integer.parseInt(operandi[0]) * Integer.parseInt(operandi[1]);
-				System.out.println(result);
-			} else if (operatore[1].equals("/")) {
-				float result = Float.parseFloat(operandi[0]) / Float.parseFloat(operandi[1]);
-				System.out.println(result);
+		System.out.println(operazioni);
+		while (operazioni.size()>1) {
+			if (operazioni.get(1).equals("+")) {	
+				operazioni.set(2, Float.toString(Float.parseFloat(operazioni.get(0)) + Float.parseFloat(operazioni.get(2))));
+				operazioni.remove(0);
+				operazioni.remove(0);
+				System.out.println(operazioni.get(0));
+			} else if (operazioni.get(1).equals("-")) {
+				operazioni.set(2, Float.toString(Float.parseFloat(operazioni.get(0)) - Float.parseFloat(operazioni.get(2))));
+				operazioni.remove(0);
+				operazioni.remove(0);
+				System.out.println(operazioni.get(0));
+			} else if (operazioni.get(1).equals("*")) {
+				operazioni.set(2, Float.toString(Float.parseFloat(operazioni.get(0)) * Float.parseFloat(operazioni.get(2))));
+				operazioni.remove(0);
+				operazioni.remove(0);
+				System.out.println(operazioni.get(0));
+			} else if (operazioni.get(1).equals("/")) {
+				operazioni.set(2, Float.toString(Float.parseFloat(operazioni.get(0)) / Float.parseFloat(operazioni.get(2))));
+				operazioni.remove(0);
+				operazioni.remove(0);
+				System.out.println(operazioni.get(0));
 			} else {
 				System.out.println("errore");
 			}
 		}
 	}
-
 }
