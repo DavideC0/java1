@@ -21,12 +21,19 @@ public class Aereo {
 	public void setPostiTrue(int indice) {
 		this.posti[indice] = true;
 	}
+	public void setPostiFalse(int indice) {
+		this.posti[indice] = false;
+	}
 	public int getPostiLiberi() {
 		return this.postiLiberi;
 	}
 	
 	public void decPostiLiberi() {
 		this.postiLiberi--;
+	}
+	
+	public void addPostiLiberi() {
+		this.postiLiberi++;
 	}
 	
 	public int getpostiOccupati() {

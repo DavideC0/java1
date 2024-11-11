@@ -40,6 +40,20 @@ public class Compagnia {
 		return false;
 	}
 	
+	public Boolean liberaPosto(int indice) {
+		if (aerei.get(indice).getPostiLiberi() == 10) {
+			return false;
+		}
+		for (int i=0; i<10; i++) {
+			if (aerei.get(indice).getPosti()[i]) {
+				aerei.get(indice).setPostiFalse(indice);
+				aerei.get(indice).addPostiLiberi();
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	@Override
 	public String toString() {
 		return "Compagnia [nome=" + nome + ", aerei=" + getAerei() + "]";
