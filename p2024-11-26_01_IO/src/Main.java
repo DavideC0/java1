@@ -81,7 +81,7 @@ public class Main {
 		riga = "";
 		Set<Wifi> new_setWifi2 = new HashSet<Wifi>();
 		try {
-			while ((riga = reader.readLine()) != null) {
+			while ((riga = br2.readLine()) != null) {
 				Wifi s = objectMapper.readValue(riga, Wifi.class);
 				new_setWifi2.add(s);
 			}
@@ -91,7 +91,7 @@ public class Main {
 			e.printStackTrace();
 		}
 		
-		System.out.println(new_setWifi);
+		System.out.println(new_setWifi2);
 		
 		
 		if (false) {
