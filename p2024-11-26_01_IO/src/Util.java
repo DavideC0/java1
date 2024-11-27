@@ -10,7 +10,7 @@ public class Util {
 	private static Random rng = new Random();
 	private static String alfa = "abcdefghijklmnopqrstuvwxyz";
 	private static String digit = "0123456789";
-	private static String simboli = "-_.:,;!?|$%";
+	private static String simboli = "-_.:;!?|$%";
 	
 	public static String getRandomAuthProtocol() {
 		int n = rng.nextInt(4);

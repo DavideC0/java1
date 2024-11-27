@@ -40,8 +40,7 @@ public class Wifi {
 	}
 	@Override
 	public String toString() {
-		return "Wifi [frequenza=" + frequenza + ", id=" + id + ", password=" + password + ", protocollo=" + protocollo
-				+ "]";
+		return frequenza + "," + id + "," + password + "," + protocollo + "\n";
 	}
 	
 	public static Wifi MakeWifi() {
